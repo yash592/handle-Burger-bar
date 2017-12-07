@@ -23,8 +23,12 @@ var db = {
 		});
 	},
 
-	selectAll: function() {
-		var queryString = "";
+	// UPDATE Customers
+	// SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+	// WHERE CustomerID = 1;
+
+	updateOne: function() {
+		var queryString = "UPDATE burgers SET burger_name = ? WHERE id = ?";
 		connection.query( function(err, result) {
 
 		});
