@@ -1,5 +1,11 @@
 var mysql = require("mysql");
 
+// ===========================================
+
+// Setting up SQL connection
+
+// ===========================================
+
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
