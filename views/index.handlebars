@@ -1,0 +1,19 @@
+<h1> Bananas! </h1>
+
+<h2> Bananas to be eetan </h2>
+
+<ul>
+	{{#each burgers}}
+		{{#unless devoured}}
+			{{> burgers/burgers-block devoured=true}}
+		{{/unless}}
+	{{/each}}
+</ul>
+
+<ul>
+	{{#each burgers}}
+		{{#if devoured}}
+			{{> burgers/burgers-block devoured=false}}
+		{{/if}}
+	{{/each}}
+</ul>

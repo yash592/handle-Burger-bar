@@ -2,7 +2,7 @@ var db = require("../config/orm.js");
 
 var burger = {
 	all: function(cb) {
-		db.all("burgers", function(res) {
+		db.selectAll("burgers", function(res) {
 			cb(res);
 		});
 	},
@@ -23,3 +23,5 @@ var burger = {
 
 
 } // burger ends here
+
+module.exports = burger;

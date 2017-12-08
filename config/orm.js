@@ -1,5 +1,7 @@
 // SQL queries for inserting updating and selecting all the burgers in the database.
 
+var connection = require("../config/connection.js");
+
 var db = {
 
 	selectAll: function(table, cb) {
