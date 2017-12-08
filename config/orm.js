@@ -2,10 +2,14 @@
 
 var db = {
 
-	selectAll: function() {
-		var queryString = "SELECT * FROM burgers";
+	selectAll: function(table, cb) {
+		var queryString = "SELECT * FROM " + table + ";";
 		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err
+			}
 
+			cb(result);
 			console.log(result);
 
 		});
@@ -13,26 +17,37 @@ var db = {
 
 	// INSERT INTO burgers (burger_name) VALUES("McAloo Tikki")
 
-	insertOne: function() {
-		var queryString = "INSERT INTO burgers (burger_name) VALUES ( ? )", [req.body],;
+	insertOne: function(table, column, values, cb) {
+		var queryString = "INSERT INTO " + table + " (" + column + ") " + "VALUES (" + values + ") "
+		console.log(queryString);
 
 		connection.query( function(err, result) {
 
-			console.log(result);
+			if (err) {
+				throw err
+			}
 
+			cb(result);
+			console.log(result);
+			
 		});
 	},
 
-	// UPDATE Customers
-	// SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-	// WHERE CustomerID = 1;
+	// UPDATE Customers	SET ContactName = 'Alfred Schmidt', City= 'Frankfurt' WHERE CustomerID = 1;
 
-	updateOne: function() {
-		var queryString = "UPDATE burgers SET burger_name = ? WHERE id = ?";
+	updateOne: function(table, column, columnVal, condition, cb) {
+		var queryString = "UPDATE " + table + " SET " + column + "= '" + columnVal + "'" + "WHERE " + condition + ";"
 		connection.query( function(err, result) {
+
+			if (err) {
+				throw err
+			}
+
+			cb(result);
+			console.log(result);
 
 		});
 	}
-}
+} // db obj ends here
 
 module.exports = db;
