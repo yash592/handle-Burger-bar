@@ -19,11 +19,11 @@ var db = {
 
 	// INSERT INTO burgers (burger_name) VALUES("McAloo Tikki")
 
-	insertOne: function(table, column, values, cb) {
-		var queryString = "INSERT INTO " + table + " (" + column + ") " + "VALUES (" + values + ") "
+	insertOne: function(column, values, cb) {
+		var queryString = "INSERT INTO burgers  (" + column + ") " + "VALUES ("  + values + ") "
 		console.log(queryString);
 
-		connection.query( function(err, result) {
+		connection.query(queryString, function(err, result) {
 
 			if (err) {
 				throw err

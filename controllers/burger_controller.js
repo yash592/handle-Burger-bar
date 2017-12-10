@@ -19,12 +19,15 @@ router.get("/", function(req, res) {
 // POST a banana
 
 router.post("/api/burgers", function(req, res) {
-	burger.create(
-		[ "burger_name" ], [ req.body.name ], function(result) {
-			res.json({ id: result.insertID });
-		});
 
-		
+	var banana = "'" + req.body.name + "'";
+
+	burger.create(
+		["burger_name"], [banana], function(result) {
+
+			res.json({ id: result.insertID });
+			
+		});		
 });
 
 module.exports = router;

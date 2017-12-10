@@ -7,10 +7,10 @@ var burger = {
 		});
 	},
 
-	create: function(table, column, values, cb) {
-		db.insertOne("burgers", column, values, function(res) {
+	create: function(column, values, cb) {
+		db.insertOne(column, values, function(res) {
 			cb(res);
-		})
+		});
 	},
 
 	// updateOne: function(table, column, columnVal, condition, cb) {
