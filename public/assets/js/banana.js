@@ -8,10 +8,10 @@ $(function() {
 				devoured: changeDevoured
 			};
 
-			$.ajax("/api/burgers" + id, {
+			$.ajax("/api/burgers/" + id, {
 				type: "PUT",
-				data: changeDevoured
-			}).then(function(){
+				data: newDevouredState
+			}).then(function() {
 				console.log("changed devoured to", newDevoured);
 				location.reload();
 			});

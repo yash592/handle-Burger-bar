@@ -13,10 +13,10 @@ var burger = {
 		});
 	},
 
-	// updateOne: function(table, column, columnVal, condition, cb) {
+	// updateOne: function(table, columnVal, condition, cb)
 
-	update: function(table, column, columnVal, condition, cb) {
-		db.updateOne("burgers", column, columnVal, condition, function(res) {
+	update: function(condition, cb) {
+		db.updateOne("burgers", "Devoured = true", condition, function(res) {
 			cb(res);
 		});
 	}

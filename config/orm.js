@@ -36,11 +36,12 @@ var db = {
 		});
 	},
 
-	// UPDATE Customers	SET ContactName = 'Alfred Schmidt', City= 'Frankfurt' WHERE CustomerID = 1;
+	// UPDATE burgers SET devoured = true where id =  "2"
 
-	updateOne: function(table, column, columnVal, condition, cb) {
-		var queryString = "UPDATE " + table + " SET " + column + "= '" + columnVal + "'" + "WHERE " + condition + ";"
-		connection.query( function(err, result) {
+	updateOne: function(table, columnVal, condition, cb) {
+		var queryString = "UPDATE " + table +  " SET " +  columnVal  + " WHERE " + condition + ";"
+		console.log(queryString);
+		connection.query(queryString, function(err, result) {
 
 			if (err) {
 				throw err
