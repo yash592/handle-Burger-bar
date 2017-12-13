@@ -1,6 +1,14 @@
 <h1> Bananas! </h1>
 
-<h2> Bananas to be eetan </h2>
+<div class = "background">
+
+	<img src ="https://i.imgur.com/vQs1XPy.png" id="minion" alt="minion">
+
+	</div>
+
+<div class = "tobeeaten">
+
+<h2> Bananas to be eaten </h2>
 
 <ul>
 	{{#each burgers}}
@@ -10,6 +18,10 @@
 	{{/each}}
 </ul>
 
+</div>
+
+<div class = "eaten">
+
 <h2> Bananas already eaten </h2>
 <ul>
 	{{#each burgers}}
@@ -18,6 +30,10 @@
 		{{/if}}
 	{{/each}}
 </ul>
+
+</div>
+
+<div class = "form">
 
 <h2>Add a Banana</h2>
 <form class="create-form">
@@ -31,3 +47,5 @@
 
 	<button type = "submit"> Add Banana </button>
 </form>
+
+</div>

@@ -4,6 +4,8 @@ $(function() {
 			var id = $(this).data("id");
 			var changeDevoured = $(this).data("newDevoured");
 
+			
+
 			var newDevouredState = {
 				devoured: changeDevoured
 			};
@@ -12,7 +14,7 @@ $(function() {
 				type: "PUT",
 				data: newDevouredState
 			}).then(function() {
-				console.log("changed devoured to", newDevoured);
+				console.log("changed devoured to", newDevouredState);
 				location.reload();
 			});
 	});
@@ -33,3 +35,5 @@ $(function() {
 		});
 	});
 });
+
+//https://www.zedge.net/d2w/4/1874996/921856365/view/?mp3
